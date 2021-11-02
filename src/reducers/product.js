@@ -1,4 +1,12 @@
-import { ACTION_LOADING_PRODUCT } from "../actions/types";
+import {
+  ACTION_LOADING_PRODUCT,
+  ACTION_SEARCH_TERM,
+  ACTION_RESET_STATE
+} from "../actions/types";
+
+/**
+* @typedef {import('../../types').default} Product
+*/
 
 /**
  * @typedef Action
@@ -11,29 +19,35 @@ import { ACTION_LOADING_PRODUCT } from "../actions/types";
 * @typedef state
 * @type {object}
 * @property {boolean} isLoading - data loading.
+* @property {string} searchTerm - the searched term.
 */
 
-
 /** @type {State} */
-export const initialState = {
-  isLoading: false
+const initialState = {
+  isLoading: false,
+  searchTerm: '',
 };
 
-
-
 /**
- * @params {State}
- * @params {Action}
- * @returns
+ * @params {State} - current state
+ * @params {Action} - action object
+ * @returns {State} - new State
  */
-export default function productReducer (state = {}, {type, payload}) {
+export default function productReducer (state = {}, { type, payload }) {
   switch (type) {
     case ACTION_LOADING_PRODUCT:
       return {
         ...state,
         isLoading: payload
       };
+      case ACTION_SEARCH_TERM:
+        return {
+          ...state,
+          searchTerm: payload
+        };
+      case ACTION_RESET_STATE:
+        return initialState;
     default:
-      return state;
+      return initialState;
   }
-}
+};
