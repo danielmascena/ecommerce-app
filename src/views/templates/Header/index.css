@@ -1,0 +1,55 @@
+.masthead {
+  display: flex;
+  background: tomato;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.masthead-brand {
+  font-weight: 600;
+  font-size: 1.7em;
+  padding: 0.7em;
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.masthead-navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.masthead-navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1.5em;
+  color: white;
+  cursor: pointer;
+}
+
+.masthead-navigation a:hover {
+  background-color: chocolate;
+}
+
+@media all and (max-width: 800px) {
+  .masthead-navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 520px) {
+  .masthead-navigation {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  .masthead-navigation a {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255,0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .masthead-navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}

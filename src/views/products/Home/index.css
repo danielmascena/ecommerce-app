@@ -1,0 +1,13 @@
+
+.home-heading {
+  text-align: center;
+  padding: 1rem;
+}
+
+.home-search {
+  display: flex;
+  justify-content:space-between;
+  margin: 2rem auto;
+  width: 80%;
+  align-items: center;
+}

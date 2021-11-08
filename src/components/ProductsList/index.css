@@ -1,7 +1,12 @@
 
-.product-table {
+.list-container {
+  text-align: center;
+}
+
+.product-grid {
   display: flex;
-  flex-direction: column;
-  max-width: 70%;
-  margin: auto;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  gap: 1rem;
+  width: 80%;
 }

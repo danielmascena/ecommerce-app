@@ -1,5 +1,4 @@
 import {memo} from "react";
-
 import {Product} from "../../types";
 
 import "./index.css";
@@ -20,19 +19,27 @@ import "./index.css";
   */
 const ProductCard = ({product, ariaLabel}) => {
   if (product instanceof Product === false) {
-    throw new Error("Product object has incorrect properties");
+    console.error("Product object has incorrect properties");
+    return;
   }
   const extraAttr = ariaLabel ? {
     role: ariaLabel
   } : null;
-
+  const {id, defaultImage, name, price} = product;
   return (
-    <article>
-      <picture>
-        <img src={product.defaultImage} alt="Default image of the product" aria-hidden="true" />
+    <article
+      key={id}
+      style={{
+        backgroundImage: `url(${defaultImage})`
+      }}
+      className="product-container"
+      {...extraAttr}
+    >
+      <picture className="product-image" hidden>
+        <img src={defaultImage} alt="Default image of the product" aria-hidden="true" />
       </picture>
-      <span {...extraAttr}>{product.name}</span>
-      <span {...extraAttr}>${product.price}</span>
+      <h2 className="product-name">{name}</h2>
+      <span className="product-price">Price - ${price}</span>
     </article>
   );
 }

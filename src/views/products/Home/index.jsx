@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import * as api from "../../../services";
 import ProductsList from "../../../components/ProductsList";
+import SearchBox from "../../../components/SearchBox";
+
+import "./index.css";
 
 let cacheProducts = [];
 
@@ -29,8 +32,12 @@ const Home = ({
   }, [searchTerm]);
 
   return (
-    <section>
-      <h1>Products <small>found {products.length}</small></h1>
+    <section className="home-container">
+      <h1 className="home-heading">Welcome to Product Home page</h1>
+      <div className="home-search">
+        <p>Products <small>found {products.length}</small></p>
+        <SearchBox />
+      </div>
       <ProductsList products={products} />
     </section>
   )

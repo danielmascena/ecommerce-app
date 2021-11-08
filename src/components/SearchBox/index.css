@@ -1,0 +1,11 @@
+#search-text {
+  caret-color: deeppink;
+  appearance: none;
+  padding: 0.5em;
+  border-color: lightcoral;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+#search-text:focus {
+  outline-color: lightpink;
+}

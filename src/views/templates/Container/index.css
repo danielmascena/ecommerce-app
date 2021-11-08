@@ -1,0 +1,19 @@
+
+
+.app-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
+
+.app-container > * {
+  flex: 1 100%;
+}
+
+.app-content {
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  .main { flex: 2 0px; }
+}

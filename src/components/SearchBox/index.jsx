@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 import {debounce} from "../../helpers/utils";
 
-import {loadingProduct, searchProducts} from "../../actions";
+import {searchProducts} from "../../actions";
 
 import "./index.css";
 

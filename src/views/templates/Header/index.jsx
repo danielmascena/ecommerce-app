@@ -1,10 +1,13 @@
 
+import "./index.css";
+
 const Header = () => (
-  <header>
-    <h1>Smart Hardware Shop</h1>
-    <nav>
-      <a href>Link</a>
-      </nav>
+  <header className="masthead">
+    <h1 className="masthead-brand">Smart Hardware e-shop</h1>
+    <nav className="masthead-navigation">
+      <a href>Login</a>
+      <a href>About</a>   
+    </nav>
   </header>
 );
 
